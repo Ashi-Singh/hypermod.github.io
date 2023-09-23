@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        /* Reset some default styles */
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        /* Navigation Menu Styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            transition: left 0.3s ease-in;
+        }
+        
+        .sidebar.show {
+            left: 0;
+        }
+        
+        .sidebar ul {
+            padding: 20px;
+        }
+        
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        
+        /* Main Content Styles */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        /* Welcome Animation Styles */
+        .welcome-animation {
+            font-size: 36px;
+            animation: slideIn 1s ease-in-out;
+        }
+        
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Your Logo</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">Sidebar Item 1</a></li>
+            <li><a href="#">Sidebar Item 2</a></li>
+            <li><a href="#">Sidebar Item 3</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="welcome-animation">Welcome to Your Website!</div>
+    </div>
+
+    <script>
+        // JavaScript to toggle the sidebar
+        const sidebar = document.querySelector('.sidebar');
+        const toggleButton = document.querySelector('.toggle-button');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
